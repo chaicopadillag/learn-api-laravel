@@ -1,29 +1,33 @@
 version: "3"
 services:
-  database:
-    container_name: mysqldb
-    image: mysql:8.3.0
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    ports:
-      - 3306:3306
-  app:
-    depends_on:
-      - database
-    container_name: courses-app
-    image: bitnami/laravel:11.0.6
-    environment:
-      - LARAVEL_DATABASE_TYPE=mysql
-      - LARAVEL_DATABASE_HOST=mysqldb
-      - LARAVEL_DATABASE_PORT_NUMBER=3306
-      - LARAVEL_DATABASE_USER=${MYSQL_USER}
-      - LARAVEL_DATABASE_PASSWORD=${MYSQL_PASSWORD}
-      - LARAVEL_DATABASE_NAME=${MYSQL_DATABASE}
-    volumes:
-      -  .:/app
-    ports:
-      - 8000:8000
+    database:
+        container_name: mysqldb
+        image: mysql:8.3.0
+        environment:
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        ports:
+        - 3306:3306
+    app:
+        depends_on:
+        - database
+        container_name: api-learning
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+        -  .:/var/www/html
+        ports:
+        - 9000:9000
+    nginx:
+        image: nginx:latest
+        ports:
+        - "8000:80"
+        volumes:
+        - .:/var/www/html
+        - ./nginx:/etc/nginx/conf.d
+        depends_on:
+        - app
 

@@ -1,0 +1,8 @@
+vendor
+.env
+.dockerignore
+.git
+.gitignore
+.gitattributes
+dcoker-compose.yml
+package.json
