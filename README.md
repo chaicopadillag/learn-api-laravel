@@ -42,6 +42,8 @@ Antes de ejecutar el proyecto localmente, asegúrate de tener instalado lo sigui
     php artisan key:generate
     ```
 
+    Importante setear el valor de `ADMIN_PASSWORD` en env para enviar semillas
+
 5. **Ejecutar las Migraciones y Semillas:**
 
     Ejecuta las migraciones de la base de datos y las semillas para poblar la base de datos:

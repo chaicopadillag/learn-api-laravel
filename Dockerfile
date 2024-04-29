@@ -13,6 +13,8 @@ WORKDIR /var/www/html
 COPY . .
 COPY .env.example .env
 
+COPY ./nginx /etc/nginx/conf.d
+
 RUN composer install --no-scripts
 
 RUN php artisan key:generate
