@@ -66,6 +66,14 @@ Antes de ejecutar el proyecto localmente, asegúrate de tener instalado lo sigui
 
     Esto iniciará el servidor en `http://localhost:8000`. Puedes acceder a tu aplicación desde tu navegador web.
 
+## Docker
+
+    Para dockerizar al app ejecuta:
+
+    ```
+    docker compose up -d
+    ```
+
 ## Autor
 
 Api desarrollador por [Gerardo Chaico](https://chaicopadillag.github.io/).
