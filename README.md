@@ -42,7 +42,7 @@ Antes de ejecutar el proyecto localmente, asegúrate de tener instalado lo sigui
     php artisan key:generate
     ```
 
-    Importante setear el valor de `ADMIN_PASSWORD` en env para enviar semillas
+    Importante setear el valor de `ADMIN_PASSWORD` en .env el password con el cual se usa para login.
 
 5. **Ejecutar las Migraciones y Semillas:**
 
