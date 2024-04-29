@@ -74,6 +74,10 @@ Antes de ejecutar el proyecto localmente, asegúrate de tener instalado lo sigui
     docker compose up -d
     ```
 
+## Docs Api en Postman
+
+Documentación de la api: [Docs Api Learning](https://documenter.getpostman.com/view/11896801/2sA3BuXpLR).
+
 ## Autor
 
 Api desarrollador por [Gerardo Chaico](https://chaicopadillag.github.io/).
